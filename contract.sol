@@ -36,7 +36,9 @@ contract Visa{
         return true;
     }
 
+    //function to update the passport
     function updatePassport(address _candidateAddress,uint _newPhoneNo)public returns(candidates memory,string memory){
+        //revert() is used to handle is passport doesen't exists.
         if(candidate[_candidateAddress].isHavingPassport!= true){
             revert("No existing passport to update, first create a new one");
         }
@@ -44,10 +46,13 @@ contract Visa{
         return (candidate[_candidateAddress],"Passport updated");
     }
 
+    //function to apply for visa
     function applyVisa(address _candidateAddress)public view returns (string memory){
+        //revert() used to handle if candidate has pasport or not
         if(candidate[_candidateAddress].isHavingPassport!= true){
             revert("No existing passport to update, first create a new one");
         }
+        //assert() is used to check the eligible nationality
         assert(candidate[_candidateAddress].nationality == nation.India ||
         candidate[_candidateAddress].nationality == nation.Russia);
         return("visa applied successfully");
