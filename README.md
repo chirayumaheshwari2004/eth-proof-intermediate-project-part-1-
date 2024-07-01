@@ -79,8 +79,8 @@ you may change the values of enum nation according to your own comfort and can a
 
 ## Authors
 
-Mayank Sharma  
-[@Mayank](https://www.linkedin.com/in/mayank-sharma-078278243/)
+Chirayu Maheshwari
+@chirayujhanwar6@gmail.com
 
 
 ## License
